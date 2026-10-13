@@ -14,6 +14,7 @@ async function loadData() {
                 article.innerHTML = `
                 <section class="perso__info">
                     <h3>${character.name}</h3>
+                    <h4>${character.alternate_names}</h4>
                     <div class="perso">
                     <figure class="perso__left">
                         <img
