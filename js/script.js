@@ -2,7 +2,7 @@
 async function loadData(selectedHouse) {
     const reponse = await fetch(`https://hp-api.onrender.com/api/characters`);
     let data = await reponse.json();
-    data = data.slice(0, 20); // j'ai trouvé sur google
+    //data = data.slice(0, 20); // j'ai trouvé sur google
 
     //buttons houses
     if (selectedHouse) {
@@ -18,8 +18,8 @@ async function loadData(selectedHouse) {
             data.forEach((character) => {
                 const article = document.createElement('article');
                 article.innerHTML = `
-                    <a class="character-link" href="./details.html">
-                        <div class="${character.house.toLowerCase()}">
+                    <a class="character-link" href="./details.html?name=${character.name}">
+                        <div class="${character.house ? character.house.toLowerCase() : ''}">
                             <img 
                             src="${character.image || "./images/troll.jpg"}" 
                             alt="${character.name}"
